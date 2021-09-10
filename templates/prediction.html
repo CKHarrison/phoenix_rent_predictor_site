@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="jumbotron">
+       {% if session['prediction'] %}
+            <h1>Here is your prediction!</h1>
+        <p>The features for the apartment:</p>
+        <ul>
+            <li>Square Footage: {{ session['sqft'] }}</li>
+            <li>Beds: {{ session['beds'] }}</li>
+            <li>Baths: {{ session['baths'] }}</li>
+            {% if session['electric'] %}
+                <li>Comes with an electric vehicle charger </li>
+            {% else %}
+                <li>Does not come with an electric vehicle charger</li>
+            {% endif %}
+            {% if session['furnished'] %}
+                <li>Is fully furnished </li>
+            {% else %}
+                <li>Is not furnished</li>
+            {% endif %}
+            <li>Has {{ session['laundry'] }}</li>
+            <li>Has {{ session['garage'] }}</li>
+        </ul>
+        <p>The estimated price for your apartment is ${{ session['prediction'] }}</p>
+
+       {% else %}
+           <div class="jumbotron">
+            <h1>Please Make a prediction before proceeding</h1>
+           </div>
+        {% endif %}
+
+    </div>
+{% endblock %}
