@@ -10,7 +10,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = os.environ('SECRET_KEY')
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 # Load column names
 column_names = joblib.load('./static/column_names.pkl')
