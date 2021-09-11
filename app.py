@@ -18,7 +18,6 @@ column_names = joblib.load('./static/column_names.pkl')
 model = joblib.load('./static/final_model.pkl')
 
 
-
 class InfoForm(FlaskForm):
     sqft = IntegerField("Please enter the square feet of the apartment", validators=[DataRequired()])
     beds = SelectField('Select the number of beds:',
@@ -111,7 +110,6 @@ def index():
         return redirect(url_for('prediction'))
     if form.sqft.errors:
         flash('Please make sure to select every choice, square feet must be an integer value')
-
 
     return render_template('home.html', form=form)
 
