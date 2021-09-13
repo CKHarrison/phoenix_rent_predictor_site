@@ -21,7 +21,15 @@
             <li>Has {{ session['laundry'] }}</li>
             <li>Has {{ session['garage'] }}</li>
         </ul>
-        <p>The estimated price for your apartment is ${{ session['prediction'] }}</p>
+        <h2>The estimated price for your apartment is ${{ session['prediction'] }}</h2>
+           <h3>Explanation of Visualizations</h3>
+           <p>
+               These helpful visualizations are provided as an “at a glance” guide to understanding what features impact
+               apartment prices and the general price range that can be expected based on the various features of
+               different apartments. Predictive information can be found on the Feature v. Price Prediction heat map and
+               Prediction Regression Line, while descriptive information can be found on the Square Footage v.
+               Number of Beds v. Price scatter plot and Apartments v. Price histogram.
+           </p>
            <div>
             <img  src="../static/images/weights-vs-feats-4-2.png" width="45%"/>
             <img src="../static/images/sqfeet_price.png" width="45%"/>
@@ -29,6 +37,7 @@
             <img src="../static/images/regressionline.png" width="45%"/>
             <img src="../static/images/apartment_distribution.png" width="45%" />
            </div>
+
 
 
        {% else %}
