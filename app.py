@@ -88,7 +88,7 @@ def create_predictions(sqft, beds, baths, electric, furnished, laundry, garage):
 def index():
     form = InfoForm()
 
-    if form.validate_on_submit():
+    if form.validate_on_submit() and form.sqft.data > 0:
         sqft = form.sqft.data
         beds = form.beds.data
         baths = form.baths.data
@@ -109,7 +109,7 @@ def index():
         session['prediction'] = round(predicted_value, 2)
         return redirect(url_for('prediction'))
     if form.sqft.errors:
-        flash('Please make sure to select every choice, square feet must be an integer value')
+        flash('Please make sure to select every choice, square feet must be a non negative integer value')
 
     return render_template('home.html', form=form)
 
