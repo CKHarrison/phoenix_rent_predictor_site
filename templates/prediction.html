@@ -22,6 +22,14 @@
             <li>Has {{ session['garage'] }}</li>
         </ul>
         <p>The estimated price for your apartment is ${{ session['prediction'] }}</p>
+           <div>
+            <img  src="../static/images/weights-vs-feats-4-2.png" width="45%"/>
+            <img src="../static/images/sqfeet_price.png" width="45%"/>
+               <br/>
+            <img src="../static/images/regressionline.png" width="45%"/>
+            <img src="../static/images/apartment_distribution.png" width="45%" />
+           </div>
+
 
        {% else %}
            <div class="jumbotron">
