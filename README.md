@@ -3,7 +3,9 @@
 ---
 
 Machine learning powered web application that predicts apartment prices in Phoenix Arizona based on features of the unit.
+
 [Live Application](https://phoenix-rent-predictor.herokuapp.com/)
+
 [Machine Learning Model Documentation](https://github.com/CKHarrison/phoenix-rent-predictor)
 
 ---
