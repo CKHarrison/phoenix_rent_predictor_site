@@ -58,4 +58,4 @@ The model was relatively accuarate, especially when factoring in the discrepancy
 
 This web app is based off of my prediction model found [here](https://github.com/CKHarrison/phoenix-rent-predictor).
 
-Along with Craigslist data from [Austin Resse](https://www.kaggle.com/austinreese/usa-housing-listings)
+Along with Craigslist data from [Austin Reese](https://www.kaggle.com/austinreese/usa-housing-listings)
