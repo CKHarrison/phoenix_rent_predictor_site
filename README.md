@@ -15,6 +15,7 @@ Machine learning powered web application that predicts apartment prices in Phoen
   - [General Information](#general-information)
   - [Accuracy of Predictions](#accuracy-of-predictions)
   - [Technologies Used](#technologies-used)
+  - [Future Improvements](#future-improvements)
   - [Sources](#sources)
 
 ---
@@ -51,6 +52,16 @@ The model was relatively accuarate, especially when factoring in the discrepancy
 - Flask
 - Scikit-Learn
 - Heroku
+
+---
+
+## Future Improvements
+
+- When I have time I would like to update the UI to make it look more modern, my initial goal with this application was to just make it work. So I would definitely like to touch on that.
+
+- I would like add a more user friendly way of relaying the impact that all the features have on the prediction.
+
+- Display a real time listing of similar units on Craigslist.com and dynamically compare the result to the prediction.
 
 ---
 
