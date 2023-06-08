@@ -10,6 +10,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
+
 app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 # Load column names

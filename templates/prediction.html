@@ -1,51 +1,60 @@
-{% extends 'base.html' %}
-{% block content %}
-    <div class="jumbotron">
-       {% if session['prediction'] %}
-            <h1 class="text-center">Here is your prediction!</h1>
-        <p class="text-center">The features for the apartment:</p>
-        <ul class="text-center">
-            <li>Square Footage: {{ session['sqft'] }}</li>
-            <li>Beds: {{ session['beds'] }}</li>
-            <li>Baths: {{ session['baths'] }}</li>
-            {% if session['electric'] %}
-                <li>Comes with an electric vehicle charger </li>
-            {% else %}
-                <li>Does not come with an electric vehicle charger</li>
-            {% endif %}
-            {% if session['furnished'] %}
-                <li>Is fully furnished </li>
-            {% else %}
-                <li>Is not furnished</li>
-            {% endif %}
-            <li>Has {{ session['laundry'] }}</li>
-            <li>Has {{ session['garage'] }}</li>
-        </ul>
-        <h2 class="text-center">The estimated price for your apartment is ${{ session['prediction'] }} </h2>
-       <p class="text-center">Note: The margin of error for this prediction is between $108-$173</p>
-           <h3 style="text-align: center; margin-top: 2em">Explanation of Visualizations</h3>
-           <p>
-               These helpful visualizations are provided as an “at a glance” guide to understanding what features impact
-               apartment prices and the general price range that can be expected based on the various features of
-               different apartments. Predictive information can be found on the Feature v. Price Prediction heat map and
-               Prediction Regression Line, while descriptive information can be found on the Square Footage v.
-               Number of Beds v. Price scatter plot and Apartments v. Price histogram.
-           </p>
-           <div>
-            <img  src="../static/images/weights-vs-feats-4-2.png" width="45%"/>
-            <img src="../static/images/sqfeet_price.png" width="45%"/>
-               <br/>
-            <img src="../static/images/regressionline.png" width="45%"/>
-            <img src="../static/images/apartment_distribution.png" width="45%" />
-           </div>
+{% extends 'base.html' %} {% block content %}
+<div class="jumbotron">
+  {% if session['prediction'] %}
+  <h1 class="text-center">Here is your prediction!</h1>
+  <p class="text-center">The features for the apartment:</p>
+  <ul class="text-center">
+    <li class="prediction--item">Square Footage: {{ session['sqft'] }}</li>
+    <li class="prediction--item">Beds: {{ session['beds'] }}</li>
+    <li class="prediction--item">Baths: {{ session['baths'] }}</li>
+    {% if session['electric'] %}
+    <li class="prediction--item">Comes with an electric vehicle charger</li>
+    {% else %}
+    <li class="prediction--item">
+      Does not come with an electric vehicle charger
+    </li>
+    {% endif %} {% if session['furnished'] %}
+    <li class="prediction--item">Is fully furnished</li>
+    {% else %}
+    <li class="prediction--item">Is not furnished</li>
+    {% endif %}
+    <li class="prediction--item">Has {{ session['laundry'] }}</li>
+    <li class="prediction--item">Has {{ session['garage'] }}</li>
+  </ul>
+  <h2 class="text-center">
+    The estimated price for your apartment is ${{ session['prediction'] }}
+  </h2>
+  <p class="text-center">
+    Note: The margin of error for this prediction is between $108-$173 as of
+    September 2021. <br />
+    This model is based off of all available data from 2020. Due to inflation
+    and other economic factors, these predictions will be less accurate over
+    time.
+  </p>
+  <h3 style="text-align: center; margin-top: 2em">
+    Explanation of Visualizations
+  </h3>
+  <p>
+    These helpful visualizations are provided as an “at a glance” guide to
+    understanding what features impact apartment prices and the general price
+    range that can be expected based on the various features of different
+    apartments. Predictive information can be found on the Feature v. Price
+    Prediction heat map and Prediction Regression Line, while descriptive
+    information can be found on the Square Footage v. Number of Beds v. Price
+    scatter plot and Apartments v. Price histogram.
+  </p>
+  <div>
+    <img src="../static/images/weights-vs-feats-4-2.png" width="45%" />
+    <img src="../static/images/sqfeet_price.png" width="45%" />
+    <br />
+    <img src="../static/images/regressionline.png" width="45%" />
+    <img src="../static/images/apartment_distribution.png" width="45%" />
+  </div>
 
-
-
-       {% else %}
-           <div class="jumbotron">
-            <h1>Please Make a prediction before proceeding</h1>
-           </div>
-        {% endif %}
-
-    </div>
+  {% else %}
+  <div class="jumbotron">
+    <h1>Please Make a prediction before proceeding</h1>
+  </div>
+  {% endif %}
+</div>
 {% endblock %}
